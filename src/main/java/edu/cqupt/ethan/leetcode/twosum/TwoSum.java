@@ -1,4 +1,4 @@
-package edu.cqupt.ethan.leetcode.twosum;
+package edu.cqupt.ethan.leetcode.TwoSum;
 
 /**
  * @author Ethan
@@ -7,7 +7,7 @@ package edu.cqupt.ethan.leetcode.twosum;
  */
 public class TwoSum {
     public static void main(String[] args){
-        int[] a= {2,7,11,15};
+        int[] a= {2,7,11,15,16};
         Solution solution = new Solution();
         System.out.println(solution.twoSum(a, 9));
     }
