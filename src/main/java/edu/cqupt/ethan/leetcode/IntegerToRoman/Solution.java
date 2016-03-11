@@ -7,6 +7,7 @@ package edu.cqupt.ethan.leetcode.IntegerToRoman;
  */
 public class Solution {
     public String intToRoman(int num) {
-        return " ";
+
+        return "";
     }
 }
