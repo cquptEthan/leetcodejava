@@ -1,4 +1,4 @@
-package edu.cqupt.ethan.leetcode.MedianofTwoSortedArrays;
+package edu.cqupt.ethan.leetcode._004;
 
 /**
  * @author Ethan

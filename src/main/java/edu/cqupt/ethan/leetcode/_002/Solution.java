@@ -1,6 +1,4 @@
-package edu.cqupt.ethan.leetcode.AddTwoNumbers;
-
-import org.omg.CORBA.INTERNAL;
+package edu.cqupt.ethan.leetcode._002;
 
 /**
  * @author Ethan

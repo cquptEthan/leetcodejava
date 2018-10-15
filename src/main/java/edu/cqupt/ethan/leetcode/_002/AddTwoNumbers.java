@@ -1,4 +1,4 @@
-package edu.cqupt.ethan.leetcode.AddTwoNumbers;
+package edu.cqupt.ethan.leetcode._002;
 
 /** 749 + 74
  * @author Ethan

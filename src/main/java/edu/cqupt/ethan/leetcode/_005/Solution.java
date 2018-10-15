@@ -1,4 +1,4 @@
-package edu.cqupt.ethan.leetcode.LongestPalindromicSubstring;
+package edu.cqupt.ethan.leetcode._005;
 
 /**
  * @author Ethan
