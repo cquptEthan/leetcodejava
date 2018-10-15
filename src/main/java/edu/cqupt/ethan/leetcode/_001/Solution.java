@@ -1,4 +1,4 @@
-package edu.cqupt.ethan.leetcode.TwoSum;
+package edu.cqupt.ethan.leetcode._001;
 
 import java.util.HashMap;
 
