@@ -43,6 +43,21 @@
  */
 class Solution {
     public void rotate(int[] nums, int k) {
-        
+        if (nums.length == 0) {
+            return;
+        }
+        int len = nums.length;
+        int s = k % len;
+        int temp[] = new int[s];
+
+        for (int i = 0; i < s; i++) {
+            temp[i] = nums[len - s + i];
+        }
+        for (int i = len - s - 1; i >= 0; i--) {
+            nums[s + i] = nums[i];
+        }
+        for (int i = 0; i < s; i++) {
+            nums[i] = temp[i];
+        }
     }
 }
