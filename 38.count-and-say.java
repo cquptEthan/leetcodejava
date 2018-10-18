@@ -48,6 +48,26 @@
  */
 class Solution {
     public String countAndSay(int n) {
-        
+        if (n == 1) {
+            return "1";
+        }
+        String read = countAndSay(n - 1);
+        StringBuffer sb = new StringBuffer();
+        int i = 0;
+        int count = 1;
+        while ((i + 1) < read.length()) {
+            char c = read.charAt(i);
+            i++;
+            if (c == read.charAt(i)) {
+                count++;
+            } else {
+                sb.append(count);
+                sb.append(c);
+                count = 1;
+            }
+        }
+        sb.append(count);
+        sb.append(read.charAt(read.length() - 1));
+        return sb.toString();
     }
 }
