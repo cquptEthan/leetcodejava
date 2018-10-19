@@ -50,9 +50,12 @@ class Solution {
         int s = k % len;
         int temp[] = new int[s];
 
+        // 取出最后一串元素
         for (int i = 0; i < s; i++) {
             temp[i] = nums[len - s + i];
         }
+
+        // 移动前一段元素
         for (int i = len - s - 1; i >= 0; i--) {
             nums[s + i] = nums[i];
         }

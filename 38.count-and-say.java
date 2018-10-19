@@ -51,6 +51,7 @@ class Solution {
         if (n == 1) {
             return "1";
         }
+        // 递归计算上一个输出
         String read = countAndSay(n - 1);
         StringBuffer sb = new StringBuffer();
         int i = 0;
@@ -58,6 +59,7 @@ class Solution {
         while ((i + 1) < read.length()) {
             char c = read.charAt(i);
             i++;
+            // 字符相同则增加计数，不同则归档输出
             if (c == read.charAt(i)) {
                 count++;
             } else {

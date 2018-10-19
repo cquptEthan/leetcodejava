@@ -43,6 +43,7 @@ class Solution {
         int maxLen = Integer.MAX_VALUE;
         int maxIndex = 0;
 
+        // 以最短的字符串长度作为前缀串的最大长度
         for (int i = 0; i < strs.length; i++) {
             int len = strs[i].length();
             if (maxLen > len) {
@@ -50,8 +51,10 @@ class Solution {
                 maxIndex = i;
             }
         }
+
         while (prefix < maxLen) {
             char cur = strs[maxIndex].charAt(prefix);
+            // 遍历各个字符串当前prefix位置的字符，不同直接返回前缀长度
             for (int i = 0; i < strs.length; i++) {
                 if (strs[i].charAt(prefix) != cur) {
                     return strs[maxIndex].substring(0, prefix);
