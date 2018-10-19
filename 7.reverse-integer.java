@@ -41,6 +41,58 @@
  */
 class Solution {
     public int reverse(int x) {
-        
+        String str = String.valueOf(x);
+        boolean b = true;
+        int limit = -Integer.MAX_VALUE;
+        char[] arr;
+        if (x < 0) {
+            arr = str.substring(1).toCharArray();
+            b = false;
+            limit = Integer.MIN_VALUE;
+        } else {
+            arr = str.toCharArray();
+        }
+        int i = 0;
+        int j = arr.length - 1;
+        while (i < j) {
+            char temp = arr[j];
+            arr[j] = arr[i];
+            arr[i] = temp;
+            i++;
+            j--;
+        }
+
+        // 借助Long 26ms
+        // Long tar = Long.valueOf(new String(arr));
+        // if (!b) {
+        // tar *= -1;
+        // if (tar < Integer.MIN_VALUE) {
+        // return 0;
+        // } else {
+        // return (tar).intValue();
+        // }
+        // } else {
+        // if (tar > Integer.MAX_VALUE) {
+        // return 0;
+        // } else {
+        // return tar.intValue();
+        // }
+        // }
+        int res = 0;
+        int len = arr.length;
+        int mullimit = limit / 10;
+        i = 0;
+        while (i < len) {
+            int digit = Character.digit(arr[i++], 10);
+            if (digit < 0) {
+                return 0;
+            }
+            if (res < mullimit) {
+                return 0;
+            }
+            res *= 10;
+            res -= digit;
+        }
+        return b ? -res : res;
     }
 }
