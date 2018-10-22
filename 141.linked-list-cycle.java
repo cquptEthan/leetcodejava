@@ -28,6 +28,7 @@ public class Solution {
             return false;
         }
 
+        // 快慢指针,如果相遇就有环
         ListNode slow = head;
         ListNode fast = head;
         while (fast != null && fast.next != null) {
