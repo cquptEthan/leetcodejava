@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
-
 /*
  * [102] Binary Tree Level Order Traversal
  *
@@ -46,5 +44,30 @@ import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> ret = new LinkedList<List<Integer>>();
+        if (root == null) {
+            return ret;
+        }
+        LinkedList<TreeNode> tns = new LinkedList<TreeNode>();
+        tns.add(root);
+        while (tns.size() != 0) {
+            List<Integer> curLevel = new LinkedList<>();
+            // 确定要当前层数的元素个数
+            int size = tns.size();
+            for (int i = 0; i < size; i++) {
+                // 使用poll方法，保证就在一个数组中操作就可以了
+                TreeNode node = tns.poll();
+                if (node != null) {
+                    curLevel.add(node.val);
+                    if (node.left != null) {
+                        tns.add(node.left);
+                    }
+                    if (node.right != null) {
+                        tns.add(node.right);
+                    }
+                }
+            }
+            ret.add(curLevel);
+        }
+        return ret;
     }
 }
