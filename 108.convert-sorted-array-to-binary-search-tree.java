@@ -48,6 +48,7 @@ class Solution {
         } else if (start > end) {
             return null;
         }
+        // 因为数组是排好序的，所以只要一直二分，就能保持是平衡的
         int mid = (start + end) / 2;
         TreeNode root = new TreeNode(nums[mid]);
         root.left = sortedArrayToBST(nums, start, mid - 1);
