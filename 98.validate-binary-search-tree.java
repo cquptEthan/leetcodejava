@@ -53,7 +53,8 @@ import java.util.LinkedList;
  * left; TreeNode right; TreeNode(int x) { val = x; } }
  */
 class Solution {
-    public boolean isValidBST(TreeNode root) {
+
+    public boolean isValidBSTSlow(TreeNode root) {
         // 中序遍历 然后 判断数组有序
         LinkedList<Integer> list = new LinkedList<Integer>();
 
@@ -78,5 +79,24 @@ class Solution {
             }
         }
         return true;
+    }
+
+    // 判断子树的上界和下界,子树根节点是否在在这个范围内
+    public boolean isValidBST(TreeNode root) {
+        return isValidBSTInRanger(root, null, null);
+    }
+
+    public boolean isValidBSTInRanger(TreeNode root, Integer max, Integer min) {
+        if (root == null) {
+            return true;
+        }
+        if (min != null && root.val <= min) {
+            return false;
+        }
+        if (max != null && root.val >= max) {
+            return false;
+        }
+        return isValidBSTInRanger(root.left, root.val, min) && isValidBSTInRanger(root.right, max, root.val);
+
     }
 }
